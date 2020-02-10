@@ -12,25 +12,55 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: '**/*.sln'
+  pathtosolution: 'PopPopPotholesAPI/'
+  pathtotest: 'PopPopPotholesAPI/PopPopPotholesAPI.Test'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
 steps:
-- task: NuGetToolInstaller@1
-
-- task: NuGetCommand@2
+- task: SonarCloudPrepare@1
   inputs:
-    restoreSolution: '$(solution)'
+    SonarCloud: 'PopPopSonar'
+    organization: 'trostka'
+    scannerMode: 'MSBuild'
+    projectKey: 'PopPopToken'
+    extraProperties: |
+      sonar.cs.opencover.reportsPaths="$(Build.ArtifactStagingDirectory)/coverage/*"
+      sonar.cs.vstest.reportsPaths="$(Build.ArtifactStagingDirectory)/test/*.trx"
+      sonar.exclusions=**/wwwroot/lib/**/*
 
-- task: VSBuild@1
-  inputs:
-    solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+- script: dotnet build --configuration $(buildConfiguration)
+  workingDirectory: $(pathtosolution)
+  displayName: 'dotnet build $(buildConfiguration)'
 
-- task: VSTest@2
+- script: dotnet test
+    --configuration $(buildConfiguration)
+    --logger trx
+    --no-build
+    --results-directory $(Build.ArtifactStagingDirectory)/PopPopTest/
+    /p:CollectCoverage=true
+    /p:CoverletOutputFormat=opencover
+    /p:CoverletOutput="$(Build.ArtifactStagingDirectory)/coverage/"
+  workingDirectory: $(pathtosolution)
+  displayName: 'dotnet test'
+
+- task: SonarCloudAnalyze@1
+- task: SonarCloudPublish@1
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    pollingTimeoutSec: '300'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    arguments: --configuration $(buildConfiguration)
+    publishWebProjects: true
+    zipAfterPublish: true
+    workingDirectory: '$(pathtosolution)'
+  displayName: 'dotnet publish + zip'
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Azure subscription 1(754850ea-3e53-4645-b1d6-c006701fddbc)'
+    appType: 'webAppLinux'
+    appName: 'PopPopPotholes'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
