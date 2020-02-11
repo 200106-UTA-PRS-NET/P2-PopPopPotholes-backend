@@ -47,7 +47,7 @@ namespace PopPopLib.PPRepos
             return getIssue;
         }
 
-        public void UpdateIssueCount(Issue1 Issue)
+        public void UpdateIssue(Issue1 Issue)
         {
             if (_PPPDB.Issue.Any(IX=>IX.Id == Issue.IssueId))
             {
