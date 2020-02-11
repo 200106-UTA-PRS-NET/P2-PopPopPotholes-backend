@@ -15,6 +15,7 @@ namespace PopPopPotholesAPI.Domain.Models
         public string LinkImg { get; set; }
         public string IssueDesc { get; set; }
         public string IssueStatus { get; set; }
+        public int? IssueUpvotes { get; set; }
 
         public virtual City City { get; set; }
     }

@@ -105,6 +105,10 @@ namespace PopPopPotholesAPI.Domain.Models
                     .IsRequired()
                     .HasColumnName("issueType");
 
+                entity.Property(e => e.IssueUpvotes)
+                    .HasColumnName("issueUpvotes")
+                    .HasDefaultValueSql("((0))");
+
                 entity.Property(e => e.Latitude)
                     .HasColumnName("latitude")
                     .HasColumnType("decimal(17, 15)");

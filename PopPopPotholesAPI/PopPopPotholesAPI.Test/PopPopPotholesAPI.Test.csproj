@@ -18,7 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <ProjectReference Include="..\PopPopLib\PopPopLib.csproj" />
+=======
+    <ProjectReference Include="..\PopPopPotholesAPI.Domain\PopPopPotholesAPI.Domain.csproj" />
+>>>>>>> 70e414c658329be3171f20c84082d96eae8f8c00
   </ItemGroup>
 
 </Project>
