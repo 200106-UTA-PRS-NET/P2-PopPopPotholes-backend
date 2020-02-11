@@ -69,11 +69,11 @@ namespace PopPopPotholesAPI.Test
 
 
         [Theory]
-        [InlineData(1, "jmastaice", "password", "hey@email.com", "1231231234", 123123, '1')]
+        [InlineData(1, "jmastaice", "password", "hey@email.com", "1231231234", 123123, "1")]
         public void CityAdmin1Model(int id, string username,
                         string userpass, string email,
                         string phone, int keytocity,
-                        char acctenabled)
+                        string acctenabled)
         {
             CityAdmin1 CityAdmin = new CityAdmin1()
             {
