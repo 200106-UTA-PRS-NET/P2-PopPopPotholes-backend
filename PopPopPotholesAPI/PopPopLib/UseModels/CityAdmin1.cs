@@ -13,6 +13,6 @@ namespace PopPopLib.UseModels
         public string phone { get; set; }
         public int keyToCity { get; set; }
         public DateTime? lockOut { get; set; }
-        public char acctEnabled { get; set; }
+        public string acctEnabled { get; set; }
     }
 }

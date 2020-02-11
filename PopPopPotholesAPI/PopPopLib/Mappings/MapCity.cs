@@ -7,27 +7,27 @@ namespace PopPopLib.Mappings
 {
     public class MapCity
     {
-        public static City1 Map(Models.CxOrder CX)
+        public static City1 Map(PopPopPotholesAPI.Domain.Models.City CX)
         {
             return new City1()
             {
                 CityId = CX.Id,
-                cityName = CX.cityName,
-                countyName = CX.countyName,
-                stateName = CX.stateName,
-                countryName = CX.countryName
+                cityName = CX.CityName,
+                countyName = CX.CountyName,
+                stateName = CX.StateName,
+                countryName = CX.CountryName
             };
         }
 
-        public static Models.CxOrder Map(City1 CX)
+        public static PopPopPotholesAPI.Domain.Models.City Map(City1 CX)
         {
-            return new Models.CxOrder()
+            return new PopPopPotholesAPI.Domain.Models.City()
             {
                 Id = CX.CityId,
-                cityName = CX.cityName,
-                countyName = CX.countyName,
-                stateName = CX.stateName,
-                countryName = CX.countryName
+                CityName = CX.cityName,
+                CountyName = CX.countyName,
+                StateName = CX.stateName,
+                CountryName = CX.countryName
             };
         }
     }

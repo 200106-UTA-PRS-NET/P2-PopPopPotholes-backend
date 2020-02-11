@@ -7,33 +7,33 @@ namespace PopPopLib.Mappings
 {
     public class MapCityAdmin
     {
-        public static CityAdmin1 Map(Models.CxOrder CA)
+        public static CityAdmin1 Map(PopPopPotholesAPI.Domain.Models.CityAdmin CA)
         {
             return new CityAdmin1()
             {
                 CityId = CA.Id,
-                userName = CA.userName,
-                userPass = CA.userPass,
-                email = CA.email,
-                phone = CA.phone,
-                keyToCity = CA.keyToCity,
-                lockOut = CA.lockOut,
-                acctEnabled = CA.acctEnabled
+                userName = CA.UserName,
+                userPass = CA.UserPass,
+                email = CA.Email,
+                phone = CA.Phone,
+                keyToCity = CA.KeyToCity,
+                lockOut = CA.LockOut,
+                acctEnabled = CA.AcctEnabled
             };
         }
 
-        public static Models.CxOrder Map(CityAdmin1 CA)
+        public static PopPopPotholesAPI.Domain.Models.CityAdmin Map(CityAdmin1 CA)
         {
-            return new Models.CxOrder()
+            return new PopPopPotholesAPI.Domain.Models.CityAdmin()
             {
                 Id = CA.CityId,
-                userName = CA.userName,
-                userPass = CA.userPass,
-                email = CA.email,
-                phone = CA.phone,
-                keyToCity = CA.keyToCity,
-                lockOut = CA.lockOut,
-                acctEnabled = CA.acctEnabled
+                UserName = CA.userName,
+                UserPass = CA.userPass,
+                Email = CA.email,
+                Phone = CA.phone,
+                KeyToCity = CA.keyToCity,
+                LockOut = CA.lockOut,
+                AcctEnabled = CA.acctEnabled
             };
 
         }
