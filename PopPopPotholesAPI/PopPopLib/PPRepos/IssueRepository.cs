@@ -53,7 +53,7 @@ namespace PopPopLib.PPRepos
             {
                 var issue = _PPPDB.Issue.FirstOrDefault(IX =>
                             IX.Id == Issue.IssueId);
-                issue.Upvotes += 1;
+                issue.IssueUpvotes += 1;
                 _PPPDB.Issue.Update(issue);
                 _PPPDB.SaveChanges();
             }
