@@ -21,7 +21,8 @@ namespace PopPopLib.Mappings
                 longitude = IX.Longitude,
                 linkImg = IX.LinkImg,
                 issueDescription = IX.IssueDesc,
-                issueStatus = IX.IssueStatus
+                issueStatus = IX.IssueStatus,
+                issueUpvotes = IX.IssueUpvotes
             };
         }
 
@@ -38,7 +39,9 @@ namespace PopPopLib.Mappings
                 Longitude = IX.longitude,
                 LinkImg = IX.linkImg,
                 IssueDesc = IX.issueDescription,
-                IssueStatus = IX.issueStatus
+                IssueStatus = IX.issueStatus,
+                IssueUpvotes = IX.issueUpvotes
+                
             };
         }
     }

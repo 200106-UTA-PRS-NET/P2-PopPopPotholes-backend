@@ -16,6 +16,6 @@ namespace PopPopLib.UseModels
         public string linkImg { get; set; }
         public string issueDescription { get; set; }
         public string issueStatus { get; set; }
-
+        public int? issueUpvotes { get; set; }
     }
 }
