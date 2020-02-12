@@ -37,7 +37,7 @@ namespace PopPopPotholesAPI.Controllers
         }
 
         // GET: api/CityAdmin/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}", Name = "GetCityAdmin")]
         public CityAdmin1 Get(int id)
         {
             var input = _cityAdminRpo.ReadInCityAdmin().ToList();

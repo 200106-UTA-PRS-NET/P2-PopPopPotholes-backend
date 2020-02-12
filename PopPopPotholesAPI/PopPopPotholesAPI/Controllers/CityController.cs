@@ -33,7 +33,7 @@ namespace PopPopPotholesAPI.Controllers
         }
 
         // GET: api/City/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}", Name = "GetCity")]
         public City1 Get(int id)
         {
             var  city = _cityRpo.ReadInCity().ToList();

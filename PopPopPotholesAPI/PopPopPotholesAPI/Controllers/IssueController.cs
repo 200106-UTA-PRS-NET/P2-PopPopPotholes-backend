@@ -33,7 +33,7 @@ namespace PopPopPotholesAPI.Controllers
         }
 
         // GET: api/Issue/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}", Name = "GetIssue")]
         public Issue1 Get(int id)
         {
             var issue = _IssueRpo.ReadInIssue().ToList();
