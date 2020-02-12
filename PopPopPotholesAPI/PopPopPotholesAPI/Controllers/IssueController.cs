@@ -26,16 +26,18 @@ namespace PopPopPotholesAPI.Controllers
 
         // GET: api/Issue
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Issue1> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _IssueRpo.ReadInIssue().ToList();
+            //return new string[] { "value1", "value2" };
         }
 
         // GET: api/Issue/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public Issue1 Get(int id)
         {
-            return "value";
+            var issue = _IssueRpo.ReadInIssue().ToList();
+            return issue.FirstOrDefault(e=>e.IssueId == id);
         }
 
         // POST: api/Issue
@@ -54,6 +56,7 @@ namespace PopPopPotholesAPI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            _IssueRpo.DeleteIssue(id);
         }
     }
 }

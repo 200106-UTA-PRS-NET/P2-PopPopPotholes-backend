@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using PopPopLib.UseModels;
 using PopPopLib.PPRepos;
 using PopPopLib.PPAbstracts;
+using PopPopLib.Mappings;
 
 
 namespace PopPopPotholesAPI.Controllers
@@ -29,16 +30,18 @@ namespace PopPopPotholesAPI.Controllers
 
         // GET: api/CityAdmin
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<CityAdmin1> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _cityAdminRpo.ReadInCityAdmin().ToList();
+            //return new string[] { "value1", "value2" };
         }
 
         // GET: api/CityAdmin/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public CityAdmin1 Get(int id)
         {
-            return "value";
+            var input = _cityAdminRpo.ReadInCityAdmin().ToList();
+            return input.FirstOrDefault(e=>e.CityId == id);
         }
 
         // POST: api/CityAdmin
@@ -57,6 +60,7 @@ namespace PopPopPotholesAPI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            _cityAdminRpo.DeleteCityAdmin(id);
         }
     }
 }
