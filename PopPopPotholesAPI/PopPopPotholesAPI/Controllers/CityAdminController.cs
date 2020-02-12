@@ -4,6 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PopPopLib.UseModels;
+using PopPopLib.PPRepos;
+using PopPopLib.PPAbstracts;
+
 
 namespace PopPopPotholesAPI.Controllers
 {
@@ -11,6 +15,18 @@ namespace PopPopPotholesAPI.Controllers
     [ApiController]
     public class CityAdminController : ControllerBase
     {
+
+
+
+        private readonly IRepositoryCityAdmin<CityAdmin1> _cityAdminRpo;
+
+        public CityAdminController(IRepositoryCityAdmin<CityAdmin1> cityAdminRepo)
+        {
+            _cityAdminRpo = cityAdminRepo;
+        }
+
+
+
         // GET: api/CityAdmin
         [HttpGet]
         public IEnumerable<string> Get()

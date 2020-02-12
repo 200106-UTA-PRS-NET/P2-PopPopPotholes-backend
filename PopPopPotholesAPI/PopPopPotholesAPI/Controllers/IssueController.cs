@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PopPopLib.PPAbstracts;
+using PopPopLib.UseModels;
 
 namespace PopPopPotholesAPI.Controllers
 {
@@ -11,6 +13,17 @@ namespace PopPopPotholesAPI.Controllers
     [ApiController]
     public class IssueController : ControllerBase
     {
+
+
+        private readonly IRepositoryIssue<Issue1> _IssueRpo;
+
+        public IssueController(IRepositoryIssue<Issue1> issueRepo)
+        {
+            _IssueRpo = issueRepo;
+        }
+
+
+
         // GET: api/Issue
         [HttpGet]
         public IEnumerable<string> Get()
