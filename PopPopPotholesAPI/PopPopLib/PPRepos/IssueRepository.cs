@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace PopPopLib.PPRepos
 {
-    class IssueRepository : IRepositoryIssue<Issue1>
+    public class IssueRepository : IRepositoryIssue<Issue1>
     {
         PopPopPotholesDbContext _PPPDB;
         public IssueRepository(PopPopPotholesDbContext PPPDB)

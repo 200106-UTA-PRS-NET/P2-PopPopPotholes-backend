@@ -8,10 +8,10 @@ using PopPopPotholesAPI.Domain.Models;
 
 namespace PopPopLib.PPRepos
 {
-    class CityAdminRepostiory : IRepositoryCityAdmin<CityAdmin1>
+    public class CityAdminRepository : IRepositoryCityAdmin<CityAdmin1>
     {
         PopPopPotholesDbContext _PPPDB;
-        public CityAdminRepostiory(PopPopPotholesDbContext PPPDB)
+        public CityAdminRepository(PopPopPotholesDbContext PPPDB)
         {
             _PPPDB = PPPDB;
         }

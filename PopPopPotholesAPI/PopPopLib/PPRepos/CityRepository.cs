@@ -9,14 +9,14 @@ using System.Linq;
 
 namespace PopPopLib.PPRepos
 {
-    class CityRepository : IRepositoryCity<City1>
+    public class CityRepository : IRepositoryCity<City1>
     {
-
         PopPopPotholesDbContext _PPPDB;
         public CityRepository(PopPopPotholesDbContext PPPDB)
         {
             _PPPDB = PPPDB;
         }
+
 
         public void CreateCity(City1 City)
         {

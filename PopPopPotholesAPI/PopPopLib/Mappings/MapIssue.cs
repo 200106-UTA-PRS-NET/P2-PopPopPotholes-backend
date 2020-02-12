@@ -41,7 +41,6 @@ namespace PopPopLib.Mappings
                 IssueDesc = IX.issueDescription,
                 IssueStatus = IX.issueStatus,
                 IssueUpvotes = IX.issueUpvotes
-                
             };
         }
     }
