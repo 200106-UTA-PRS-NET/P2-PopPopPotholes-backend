@@ -31,7 +31,7 @@ namespace PopPopPotholesAPI
         public void ConfigureServices(IServiceCollection services)
         {
             //VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-            string connectionString = Configuration.GetConnectionString("");
+            string connectionString = Configuration.GetConnectionString("PopPopPotholesDB");
 
             services.AddDbContext<PopPopPotholesDbContext>
                 (options => options.UseSqlServer(connectionString));
