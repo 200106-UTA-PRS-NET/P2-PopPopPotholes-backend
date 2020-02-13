@@ -34,11 +34,20 @@ namespace PopPopPotholesAPI.Controllers
 
         // GET: api/City/5
         [HttpGet("{id}", Name = "GetCity")]
-        public City1 Get(int id)
+        public IActionResult Get(int id)
         {
-            var  city = _cityRpo.ReadInCity().ToList();
-            return city.FirstOrDefault(e=>e.CityId==id);
+            //var city = _cityRpo.ReadInCity().ToList();
+            //return city.FirstOrDefault(e=>e.CityId==id);
             //return "value";
+
+            var city = _cityRpo.ReadInCity().FirstOrDefault(c => c.CityId == id);
+
+            if(city == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(city);
         }
 
         // POST: api/City

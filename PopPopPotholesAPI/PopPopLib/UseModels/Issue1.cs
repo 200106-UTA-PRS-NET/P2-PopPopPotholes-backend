@@ -7,15 +7,15 @@ namespace PopPopLib.UseModels
     public class Issue1
     {
         public int IssueId { get; set; }
-        public DateTime? issueTimeStamp { get; set; }
-        public string issueType { get; set; }
-        public string severity { get; set; }
+        public DateTime? IssueTimeStamp { get; set; }
+        public string IssueType { get; set; }
+        public string Severity { get; set; }
         public int? CityId { get; set; }
-        public decimal latitude { get; set; }
-        public decimal longitude { get; set; }
-        public string linkImg { get; set; }
-        public string issueDescription { get; set; }
-        public string issueStatus { get; set; }
-        public int? issueUpvotes { get; set; }
+        public decimal Latitude { get; set; }
+        public decimal Longitude { get; set; }
+        public string LinkImg { get; set; }
+        public string IssueDescription { get; set; }
+        public string IssueStatus { get; set; }
+        public int? IssueUpvotes { get; set; }
     }
 }

@@ -38,10 +38,19 @@ namespace PopPopPotholesAPI.Controllers
 
         // GET: api/CityAdmin/5
         [HttpGet("{id}", Name = "GetCityAdmin")]
-        public CityAdmin1 Get(int id)
+        public IActionResult Get(int id)
         {
-            var input = _cityAdminRpo.ReadInCityAdmin().ToList();
-            return input.FirstOrDefault(e=>e.CityId == id);
+            //var input = _cityAdminRpo.ReadInCityAdmin().ToList();
+            //return input.FirstOrDefault(e=>e.CityId == id);
+
+            var admin = _cityAdminRpo.ReadInCityAdmin().FirstOrDefault(a => a.AdminId == id);
+
+            if(admin == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(admin);
         }
 
         // POST: api/CityAdmin

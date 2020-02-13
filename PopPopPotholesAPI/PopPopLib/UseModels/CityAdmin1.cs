@@ -6,13 +6,13 @@ namespace PopPopLib.UseModels
 {
     public class CityAdmin1
     {
-        public int CityId { get; set; }
-        public string userName { get; set; }
-        public string userPass { get; set; }
-        public string email { get; set; }
-        public string phone { get; set; }
-        public int keyToCity { get; set; }
-        public DateTime? lockOut { get; set; }
-        public string acctEnabled { get; set; }
+        public int AdminId { get; set; }
+        public string UserName { get; set; }
+        public string UserPass { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public int KeyToCity { get; set; }
+        public DateTime? LockOut { get; set; }
+        public string AcctEnabled { get; set; }
     }
 }

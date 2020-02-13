@@ -13,16 +13,16 @@ namespace PopPopLib.Mappings
             return new Issue1()
             {
                 IssueId = IX.Id,
-                issueTimeStamp = IX.IssueTimestamp,
-                issueType = IX.IssueType,
-                severity = IX.Severity,
+                IssueTimeStamp = IX.IssueTimestamp,
+                IssueType = IX.IssueType,
+                Severity = IX.Severity,
                 CityId = IX.CityId,
-                latitude = IX.Latitude,
-                longitude = IX.Longitude,
-                linkImg = IX.LinkImg,
-                issueDescription = IX.IssueDesc,
-                issueStatus = IX.IssueStatus,
-                issueUpvotes = IX.IssueUpvotes
+                Latitude = IX.Latitude,
+                Longitude = IX.Longitude,
+                LinkImg = IX.LinkImg,
+                IssueDescription = IX.IssueDesc,
+                IssueStatus = IX.IssueStatus,
+                IssueUpvotes = IX.IssueUpvotes
             };
         }
 
@@ -31,16 +31,16 @@ namespace PopPopLib.Mappings
             return new Issue()
             {
                 Id = IX.IssueId,
-                IssueTimestamp = IX.issueTimeStamp,
-                IssueType = IX.issueType,
-                Severity = IX.severity,
+                IssueTimestamp = IX.IssueTimeStamp,
+                IssueType = IX.IssueType,
+                Severity = IX.Severity,
                 CityId = IX.CityId,
-                Latitude = IX.latitude,
-                Longitude = IX.longitude,
-                LinkImg = IX.linkImg,
-                IssueDesc = IX.issueDescription,
-                IssueStatus = IX.issueStatus,
-                IssueUpvotes = IX.issueUpvotes
+                Latitude = IX.Latitude,
+                Longitude = IX.Longitude,
+                LinkImg = IX.LinkImg,
+                IssueDesc = IX.IssueDescription,
+                IssueStatus = IX.IssueStatus,
+                IssueUpvotes = IX.IssueUpvotes
             };
         }
     }

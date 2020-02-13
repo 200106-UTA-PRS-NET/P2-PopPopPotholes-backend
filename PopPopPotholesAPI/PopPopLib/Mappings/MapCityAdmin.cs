@@ -11,14 +11,14 @@ namespace PopPopLib.Mappings
         {
             return new CityAdmin1()
             {
-                CityId = CA.Id,
-                userName = CA.UserName,
-                userPass = CA.UserPass,
-                email = CA.Email,
-                phone = CA.Phone,
-                keyToCity = CA.KeyToCity,
-                lockOut = CA.LockOut,
-                acctEnabled = CA.AcctEnabled
+                AdminId = CA.Id,
+                UserName = CA.UserName,
+                UserPass = CA.UserPass,
+                Email = CA.Email,
+                Phone = CA.Phone,
+                KeyToCity = CA.KeyToCity,
+                LockOut = CA.LockOut,
+                AcctEnabled = CA.AcctEnabled
             };
         }
 
@@ -26,14 +26,14 @@ namespace PopPopLib.Mappings
         {
             return new PopPopPotholesAPI.Domain.Models.CityAdmin()
             {
-                Id = CA.CityId,
-                UserName = CA.userName,
-                UserPass = CA.userPass,
-                Email = CA.email,
-                Phone = CA.phone,
-                KeyToCity = CA.keyToCity,
-                LockOut = CA.lockOut,
-                AcctEnabled = CA.acctEnabled
+                Id = CA.AdminId,
+                UserName = CA.UserName,
+                UserPass = CA.UserPass,
+                Email = CA.Email,
+                Phone = CA.Phone,
+                KeyToCity = CA.KeyToCity,
+                LockOut = CA.LockOut,
+                AcctEnabled = CA.AcctEnabled
             };
 
         }
