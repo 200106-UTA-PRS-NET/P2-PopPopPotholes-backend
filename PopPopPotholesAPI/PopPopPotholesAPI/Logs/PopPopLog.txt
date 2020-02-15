@@ -1,0 +1,32 @@
+02/15/2020 15:09:48 PopPopPotholes starting up
+02/15/2020 15:09:50 HTTP "GET" "/" responded 404 in 65.3452 ms
+02/15/2020 15:09:55 
+ 5001 Get all Issues from database 02/15/2020 21:09:55
+
+02/15/2020 15:09:56 Get all Issues from database
+02/15/2020 15:09:57 HTTP "GET" "/api/Issue" responded 200 in 2639.5345 ms
+02/15/2020 15:09:58 
+ 5001 Get all Issues from database 02/15/2020 21:09:58
+
+02/15/2020 15:09:58 Get all Issues from database
+02/15/2020 15:09:58 HTTP "GET" "/api/Issue" responded 200 in 87.7607 ms
+02/15/2020 15:09:59 
+ 5001 Get all Issues from database 02/15/2020 21:09:59
+
+02/15/2020 15:09:59 Get all Issues from database
+02/15/2020 15:09:59 HTTP "GET" "/api/Issue" responded 200 in 53.7739 ms
+02/15/2020 15:09:59 
+ 5001 Get all Issues from database 02/15/2020 21:09:59
+
+02/15/2020 15:09:59 Get all Issues from database
+02/15/2020 15:09:59 HTTP "GET" "/api/Issue" responded 200 in 20.9191 ms
+02/15/2020 15:09:59 
+ 5001 Get all Issues from database 02/15/2020 21:09:59
+
+02/15/2020 15:09:59 Get all Issues from database
+02/15/2020 15:09:59 HTTP "GET" "/api/Issue" responded 200 in 20.7539 ms
+02/15/2020 15:10:00 
+ 5001 Get all Issues from database 02/15/2020 21:10:00
+
+02/15/2020 15:10:00 Get all Issues from database
+02/15/2020 15:10:00 HTTP "GET" "/api/Issue" responded 200 in 19.8113 ms
