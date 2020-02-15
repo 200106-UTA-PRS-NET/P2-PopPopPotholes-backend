@@ -15,6 +15,7 @@ using PopPopLib.UseModels;
 using PopPopLib.PPRepos;
 using PopPopPotholesAPI.Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 namespace PopPopPotholesAPI
 {
@@ -53,6 +54,9 @@ namespace PopPopPotholesAPI
             }
 
             app.UseHttpsRedirection();
+
+            // Add RequestLogging() - any request made will be logged.
+            app.UseSerilogRequestLogging();
 
             app.UseRouting();
 
