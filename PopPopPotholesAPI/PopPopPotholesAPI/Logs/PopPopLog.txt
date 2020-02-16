@@ -30,3 +30,6 @@
 
 02/15/2020 15:10:00 Get all Issues from database
 02/15/2020 15:10:00 HTTP "GET" "/api/Issue" responded 200 in 19.8113 ms
+02/15/2020 22:03:33 PopPopPotholes starting up
+02/15/2020 22:10:48 PopPopPotholes starting up
+02/16/2020 10:51:28 PopPopPotholes starting up
