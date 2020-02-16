@@ -11,6 +11,7 @@ using PopPopPotholesAPI.Domain.Models;
 
 namespace PopPopPotholesAPI.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class IssueController : ControllerBase
@@ -23,7 +24,10 @@ namespace PopPopPotholesAPI.Controllers
             _IssueRpo = issueRepo;
             _logger = logger;
         }
-
+        /// <summary>
+        /// Get a list of issues
+        /// </summary>
+        /// <returns></returns>
         // GET: api/Issue
         [HttpGet]
         public IEnumerable<Issue1> Get()
@@ -57,7 +61,29 @@ namespace PopPopPotholesAPI.Controllers
         }
 
         // POST: api/Issue
+        /// <summary>
+        /// Creates an Issue
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        /// 
+        /// POST /Todo
+        /// {
+        ///     "IssueType": "Pothole",
+        ///     "Severity": "Moderate",
+        ///     "Latitude": 12.12341443235,
+        ///     "Longitude": 31.12312312312,
+        ///     "IssueDescription": "It's big and obnoxious",
+        ///     "IssueStatus": "InProgress"
+        /// }
+        /// </remarks>
+        /// <param name="issue"></param>
+        /// <returns>A newly created issue</returns>
+        /// <response code="201">Returns newly created issue</response>
+        /// <response code="400">If the issue is null</response>
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult Post([FromBody, Bind("IssueTimeStamp", "IssueType", "Severity", "CityId", "Latitude", "Longitude", "LinkImg", "IssueDescription", "IssueStatus",
             "IssueUpvotes")] Issue1 issue)
         {
