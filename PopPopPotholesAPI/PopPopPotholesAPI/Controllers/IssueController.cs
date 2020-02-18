@@ -17,11 +17,13 @@ namespace PopPopPotholesAPI.Controllers
     public class IssueController : ControllerBase
     {
         private readonly IRepositoryIssue<Issue1> _IssueRpo;
+        private readonly IRepositoryCity<City1> _CityRpo;
         private readonly ILogger<IssueController> _logger;
 
-        public IssueController(IRepositoryIssue<Issue1> issueRepo, ILogger<IssueController> logger)
+        public IssueController(IRepositoryIssue<Issue1> issueRepo, IRepositoryCity<City1> cityRepo, ILogger<IssueController> logger)
         {
             _IssueRpo = issueRepo;
+            _CityRpo = cityRepo;
             _logger = logger;
         }
         /// <summary>
@@ -56,6 +58,30 @@ namespace PopPopPotholesAPI.Controllers
                 // log in behavior for adding in new City Admin
                 _logger.LogInformation("\n 5001 No Issue with ID: {0} found in database. {Time}\n", id, DateTime.UtcNow);
 
+                return NotFound();
+            }
+        }
+
+        [HttpGet("city/{id}", Name = "GetIssueByCity")]
+        public IActionResult GetByCity(int id)
+        {
+            var city = _CityRpo.ReadInCity().FirstOrDefault(c => c.CityId == id);
+
+            if(city != null)
+            {
+                var issues = _IssueRpo.ReadInIssue().Where(i => i.CityId == id);
+
+                if(issues != null)
+                {
+                    return Ok(issues);
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            else
+            {
                 return NotFound();
             }
         }
