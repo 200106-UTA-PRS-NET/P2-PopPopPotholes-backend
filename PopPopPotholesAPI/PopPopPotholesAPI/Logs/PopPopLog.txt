@@ -33,3 +33,61 @@
 02/15/2020 22:03:33 PopPopPotholes starting up
 02/15/2020 22:10:48 PopPopPotholes starting up
 02/16/2020 10:51:28 PopPopPotholes starting up
+02/16/2020 13:38:42 PopPopPotholes starting up
+02/16/2020 13:59:43 PopPopPotholes starting up
+02/16/2020 14:02:27 PopPopPotholes starting up
+02/16/2020 14:02:34 
+ 5001 Get all Issues from database 02/16/2020 20:02:34
+
+02/16/2020 14:02:35 Get all Issues from database
+02/16/2020 14:02:37 HTTP "GET" "/api/Issue" responded 200 in 3305.9481 ms
+02/16/2020 14:02:37 HTTP "GET" "/favicon.ico" responded 404 in 2.4321 ms
+02/16/2020 14:22:36 PopPopPotholes starting up
+02/16/2020 14:23:04 
+ 5001 Get all Issues from database 02/16/2020 20:23:04
+
+02/16/2020 14:23:06 Get all Issues from database
+02/16/2020 14:23:07 HTTP "GET" "/api/Issue" responded 200 in 3180.3759 ms
+02/16/2020 14:23:07 HTTP "GET" "/favicon.ico" responded 404 in 2.1080 ms
+02/16/2020 14:23:08 
+ 5001 Get all Issues from database 02/16/2020 20:23:08
+
+02/16/2020 14:23:08 Get all Issues from database
+02/16/2020 14:23:08 HTTP "GET" "/api/Issue" responded 200 in 88.8362 ms
+02/16/2020 14:23:09 
+ 5001 Get all Issues from database 02/16/2020 20:23:09
+
+02/16/2020 14:23:09 Get all Issues from database
+02/16/2020 14:23:09 HTTP "GET" "/api/Issue" responded 200 in 22.1125 ms
+02/16/2020 14:23:09 
+ 5001 Get all Issues from database 02/16/2020 20:23:09
+
+02/16/2020 14:23:09 Get all Issues from database
+02/16/2020 14:23:09 HTTP "GET" "/api/Issue" responded 200 in 16.7452 ms
+02/16/2020 14:23:09 
+ 5001 Get all Issues from database 02/16/2020 20:23:09
+
+02/16/2020 14:23:09 Get all Issues from database
+02/16/2020 14:23:09 HTTP "GET" "/api/Issue" responded 200 in 10.8691 ms
+02/16/2020 14:23:09 
+ 5001 Get all Issues from database 02/16/2020 20:23:09
+
+02/16/2020 14:23:09 Get all Issues from database
+02/16/2020 14:23:09 HTTP "GET" "/api/Issue" responded 200 in 3.6732 ms
+02/16/2020 14:23:09 
+ 5001 Get all Issues from database 02/16/2020 20:23:09
+
+02/16/2020 14:23:09 Get all Issues from database
+02/16/2020 14:23:09 HTTP "GET" "/api/Issue" responded 200 in 12.7032 ms
+02/17/2020 14:22:00 PopPopPotholes starting up
+02/17/2020 18:48:08 PopPopPotholes starting up
+02/17/2020 18:48:24 HTTP "GET" "/index.html/api/Index" responded 404 in 52.3025 ms
+02/17/2020 18:48:28 HTTP "GET" "/index.html/api/Issue" responded 404 in 4.8377 ms
+02/17/2020 18:48:36 
+ 5001 Get all Issues from database 02/18/2020 00:48:36
+
+02/17/2020 18:48:37 Get all Issues from database
+02/17/2020 18:48:38 HTTP "GET" "/api.Issue" responded 404 in 0.2591 ms
+02/17/2020 18:48:39 HTTP "GET" "/api/Issue" responded 200 in 3237.6211 ms
+02/17/2020 18:48:39 HTTP "GET" "/favicon.ico" responded 404 in 0.2414 ms
+02/17/2020 18:48:42 HTTP "GET" "/favicon.ico" responded 404 in 0.2202 ms

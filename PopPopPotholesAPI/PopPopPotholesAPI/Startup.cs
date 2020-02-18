@@ -20,6 +20,7 @@ using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 using System.IO;
+using System.Web.Cors;
 
 
 namespace PopPopPotholesAPI
@@ -31,11 +32,23 @@ namespace PopPopPotholesAPI
             Configuration = configuration;
         }
 
+        // 
+        readonly string MyAllowSpecificationOrigins = "_myAllowSpecificOrigins";
+
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificationOrigins,
+                builder =>
+                {
+                    builder.WithOrigins("https://poppoppotholes.azurewebsites.net/api/Issue");
+                });
+            });
+
             //VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
             services.AddSwaggerGen(options =>
             {
@@ -44,14 +57,14 @@ namespace PopPopPotholesAPI
                     Title = "Contact API", 
                     Description = "API describes the collection of general r" +
                         "oadside issues the local population may want to voice",
-                    TermsOfService = new Uri("https://PopPopPotholes.com/terms"),
+                    TermsOfService = new Uri("https://poppoppotholes.azurewebsites.net/"),
                     Contact = new OpenApiContact
                     {
                         Name = "Jeremy\nZach\nKyle",
                     },
                     License = new OpenApiLicense
                     {
-                        Name = "Use under PPP"
+                        Name = "Use under PPP",
                     }
                 });
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
@@ -108,6 +121,10 @@ namespace PopPopPotholesAPI
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(MyAllowSpecificationOrigins);
+
+            app.UseHttpsRedirection();
 
             app.UseEndpoints(endpoints =>
             {

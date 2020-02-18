@@ -18,7 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PopPopLib\PopPopLib.csproj" />
     <ProjectReference Include="..\PopPopPotholesAPI.Domain\PopPopPotholesAPI.Domain.csproj" />
+    <ProjectReference Include="..\PopPopPotholesAPI\PopPopPotholesAPI.csproj" />
   </ItemGroup>
 
 </Project>
