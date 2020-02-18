@@ -40,16 +40,17 @@ namespace PopPopPotholesAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //- CORS-------------------------------------------------------------------
             services.AddCors(options =>
             {
                 options.AddPolicy(MyAllowSpecificationOrigins,
                 builder =>
                 {
-                    builder.WithOrigins("https://poppoppotholes.azurewebsites.net/api/Issue");
+                    builder.AllowAnyOrigin();
                 });
             });
+            //---------------------------------------------------------------------------
 
-            //VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo {
@@ -79,7 +80,6 @@ namespace PopPopPotholesAPI
             services.AddTransient<IRepositoryCity<City1>, CityRepository>();
             services.AddTransient<IRepositoryCityAdmin<CityAdmin1>, CityAdminRepository>();
             services.AddTransient<IRepositoryIssue<Issue1>, IssueRepository>();
-            //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
             services.AddControllers();
         }
@@ -87,24 +87,12 @@ namespace PopPopPotholesAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            //VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
                 c.RoutePrefix = string.Empty;
             });
-            //var swaggerOptions = new SwaggerOptions();
-            //Configuration.GetSection(nameof(SwaggerOptions)).Bind(swaggerOptions);
-            //app.UseSwaggerUI(options =>
-            //{
-            //    options.RouteTemplate = swaggerOptions.JsonRoute;
-            //});
-            //app.UseSwaggerUI(options =>
-            //{
-            //    options.SwaggerEndpoint(swaggerOptions.UIEndpoint, swaggerOptions.Description);
-            //});
-            //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 
@@ -122,7 +110,9 @@ namespace PopPopPotholesAPI
 
             app.UseAuthorization();
 
+            // CORS ---------------------------------
             app.UseCors(MyAllowSpecificationOrigins);
+            //---------------------------------------
 
             app.UseHttpsRedirection();
 
@@ -130,12 +120,6 @@ namespace PopPopPotholesAPI
             {
                 endpoints.MapControllers();
             });
-            //app.UseEndpoints(endpoints =>
-            //{
-            //endpoints.MapControllerRoute(
-            //    name: "default",
-            //    pattern: "{controller=Home}/{action=index}/{id?}");
-            //});
         }
     }
 }
