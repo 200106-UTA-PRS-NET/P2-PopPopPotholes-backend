@@ -46,7 +46,7 @@ namespace PopPopPotholesAPI
                 options.AddPolicy(MyAllowSpecificationOrigins,
                 builder =>
                 {
-                    builder.AllowAnyOrigin().
+                    builder.//AllowAnyOrigin
                     AllowAnyHeader().
                     AllowAnyMethod().
                     AllowCredentials();
@@ -61,8 +61,8 @@ namespace PopPopPotholesAPI
                     Title = "Contact API", 
                     Description = "API describes the collection of general r" +
                         "oadside issues the local population may want to voice",
-                    //TermsOfService = new Uri("https://poppoppotholes.azurewebsites.net/api/issue"),
-                    TermsOfService = new Uri("localhost:4200/api/issue"),
+                    TermsOfService = new Uri("https://poppoppotholes.azurewebsites.net/api/issue"),
+                    //TermsOfService = new Uri("localhost:4200/api/issue"),
                     Contact = new OpenApiContact
                     {
                         Name = "Kyle\nZach\nJeremy",

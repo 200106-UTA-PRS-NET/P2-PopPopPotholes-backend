@@ -452,3 +452,6 @@ System.InvalidOperationException: No route matches the supplied values.
 02/18/2020 00:10:51 Get all Issues from database
 02/18/2020 00:10:52 HTTP "GET" "/api/Issue" responded 200 in 2520.4335 ms
 02/18/2020 00:10:52 HTTP "GET" "/favicon.ico" responded 404 in 2.2371 ms
+02/18/2020 00:23:14 PopPopPotholes starting up
+02/18/2020 00:23:49 PopPopPotholes starting up
+02/18/2020 00:24:27 PopPopPotholes starting up
