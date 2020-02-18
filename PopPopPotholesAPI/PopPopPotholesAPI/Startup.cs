@@ -46,10 +46,9 @@ namespace PopPopPotholesAPI
                 options.AddPolicy(MyAllowSpecificationOrigins,
                 builder =>
                 {
-                    builder.//AllowAnyOrigin
+                    builder.AllowAnyOrigin().
                     AllowAnyHeader().
-                    AllowAnyMethod().
-                    AllowCredentials();
+                    AllowAnyMethod();
                 });
             });
             //---------------------------------------------------------------------------
