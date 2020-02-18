@@ -444,3 +444,11 @@ System.InvalidOperationException: No route matches the supplied values.
    at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
 02/17/2020 23:37:22 PopPopPotholes starting up
+02/18/2020 00:03:28 PopPopPotholes starting up
+02/18/2020 00:10:08 PopPopPotholes starting up
+02/18/2020 00:10:50 
+ 5001 Get all Issues from database 02/18/2020 06:10:50
+
+02/18/2020 00:10:51 Get all Issues from database
+02/18/2020 00:10:52 HTTP "GET" "/api/Issue" responded 200 in 2520.4335 ms
+02/18/2020 00:10:52 HTTP "GET" "/favicon.ico" responded 404 in 2.2371 ms
