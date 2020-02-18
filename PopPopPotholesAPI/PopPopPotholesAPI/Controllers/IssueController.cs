@@ -113,15 +113,12 @@ namespace PopPopPotholesAPI.Controllers
         public IActionResult Post([FromBody, Bind("IssueTimeStamp", "IssueType", "Severity", "CityId", "Latitude", "Longitude", "LinkImg", "IssueDescription", "IssueStatus",
             "IssueUpvotes")] Issue1 issue)
         {
-            //var issues = _IssueRpo.ReadInIssue().ToList();
-
-            //int newId = issues.Any() ? issues.Max(i => i.IssueId) + 1 : 1;
-
+            issue.CityId = 1;
             //issue.IssueId = newId;
             _IssueRpo.CreateIssue(issue);
 
             // log in behavior for adding in new City Admin
-            _logger.LogInformation("\n{0} Post Issues to database {1} : {Time}\n", 5003, issue.IssueTimeStamp, DateTime.UtcNow);
+            //_logger.LogInformation("\n{0} Post Issues to database {1} : {Time}\n", 5003, issue.IssueTimeStamp, DateTime.UtcNow);
 
             return CreatedAtRoute("Get", /*new { Id = newId },*/ issue);
         }

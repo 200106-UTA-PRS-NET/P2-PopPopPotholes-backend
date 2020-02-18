@@ -26,6 +26,7 @@ namespace PopPopLib.PPRepos
         public void CreateIssue(Issue1 Issue)
         {
             _PPPDB.Issue.Add(Mappings.MapIssue.Map(Issue));// this will generate insertMapper.Map(customer)
+
             _PPPDB.SaveChanges();// this will execute the above generate insert query
 
             // log in behavior for adding in new City Admin

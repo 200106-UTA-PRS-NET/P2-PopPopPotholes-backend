@@ -58,7 +58,7 @@ namespace PopPopPotholesAPI
                     Title = "Contact API", 
                     Description = "API describes the collection of general r" +
                         "oadside issues the local population may want to voice",
-                    TermsOfService = new Uri("https://poppoppotholes.azurewebsites.net/"),
+                    TermsOfService = new Uri("https://poppoppotholes.azurewebsites.net/api/issue"),
                     Contact = new OpenApiContact
                     {
                         Name = "Jeremy\nZach\nKyle",
