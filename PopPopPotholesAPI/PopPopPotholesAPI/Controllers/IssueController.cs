@@ -62,14 +62,14 @@ namespace PopPopPotholesAPI.Controllers
             }
         }
 
-        [HttpGet("city/{id}", Name = "GetIssueByCity")]
-        public IActionResult GetByCity(int id)
+        [HttpGet("city/{cityName}/{stateName}", Name = "GetIssueByCity")]
+        public IActionResult GetByCity(string cityName, string stateName)
         {
-            var city = _CityRpo.ReadInCity().FirstOrDefault(c => c.CityId == id);
+            var city = _CityRpo.ReadInCity().Where(c => c.cityName == cityName && c.stateName == stateName).FirstOrDefault();
 
             if(city != null)
             {
-                var issues = _IssueRpo.ReadInIssue().Where(i => i.CityId == id);
+                var issues = _IssueRpo.ReadInIssue().Where(i => i.CityId == city.CityId);
 
                 if(issues != null)
                 {
